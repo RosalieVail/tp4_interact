@@ -1,0 +1,53 @@
+[gd_scene load_steps=5 format=3 uid="uid://ckrhtxqpa8b6v"]
+
+[ext_resource type="Script" uid="uid://bk74of3xws1m0" path="res://scenes/main_menu.gd" id="1_bqqt6"]
+[ext_resource type="Texture2D" uid="uid://ceapqhnvueu0c" path="res://assets/Blue.png" id="1_ekxnf"]
+[ext_resource type="Texture2D" uid="uid://xc330y0phfuh" path="res://assets/cooltext495661861351815.png" id="2_bqqt6"]
+[ext_resource type="AudioStream" uid="uid://xpfkpbrn4vq8" path="res://assets/game-bonus-144751.mp3" id="4_wu84c"]
+
+[node name="MainMenu" type="Node"]
+script = ExtResource("1_bqqt6")
+
+[node name="TextureRect2" type="TextureRect" parent="."]
+texture_filter = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("1_ekxnf")
+stretch_mode = 1
+
+[node name="TextureRect" type="TextureRect" parent="."]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -412.0
+offset_top = -108.0
+offset_right = 413.0
+offset_bottom = -1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("2_bqqt6")
+
+[node name="BtnStart" type="Button" parent="."]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -126.0
+offset_top = 45.0
+offset_right = 127.0
+offset_bottom = 112.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_font_sizes/font_size = 25
+text = "Start Game"
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("4_wu84c")
+
+[connection signal="pressed" from="BtnStart" to="." method="_on_btn_start_pressed"]
